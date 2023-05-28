@@ -4,3 +4,4 @@ node_modules
 build
 prisma
 src/users.ts
+src/command_register.ts
