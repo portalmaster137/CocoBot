@@ -14,5 +14,8 @@ export default {
         "you leak XP.",
         "Coco dominate.",
         "Coco's newest tweet."
-    ]
+    ],
+    set_status: "Setting status to: ",
+    execution_error: 'There was an error while executing this command!',
+
 }

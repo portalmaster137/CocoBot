@@ -25,7 +25,7 @@ function st_status() {
         st_status();
     } else {
         current_status = new_status;
-        console.log("Setting status to: " + current_status)
+        console.log(localizations.set_status + current_status)
         client.user?.setPresence({
             activities: [{name: current_status, type: ActivityType.Watching}],
             status: "online"
@@ -88,7 +88,7 @@ client.on('interactionCreate', async (interaction)=>{
         await command.execute(interaction);
     } catch (error) {
         console.error(error);
-        await interaction.reply({content: 'There was an error while executing this command!', ephemeral: true});
+        await interaction.reply({content: localizations.execution_error, ephemeral: true});
     }
 })
 
