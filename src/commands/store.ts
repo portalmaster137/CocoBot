@@ -1,5 +1,6 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 import { client_db } from "../database.js";
+import localizations from "../localizations.js";
 
 function weighted_random(options: string | any[]) {
     var i;
@@ -245,7 +246,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "You got a peach!", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.peach, components: [], embeds: []});
                         break;
                     case "peach_pals":
                         await client_db.user.update({
@@ -256,7 +257,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Peach Pals! You got 3 peaches!", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.pals, components: [], embeds: []});
                         break;
                     case "peach_farmer":
                         await client_db.user.update({
@@ -267,7 +268,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Peach farmer! You got 5 peaches!", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.farmer, components: [], embeds: []});
                         break;
                     case "trap":
                         //decrease xp by 5k, making sure it doesn't go below 0
@@ -279,7 +280,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Unlucky slut~ (-5k XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.unlucky, components: [], embeds: []});
                         break;
                     case "good":
                         //increase xp by 11k
@@ -291,7 +292,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "You got 11k XP! Lucky.", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.lucky, components: [], embeds: []});
                         break;
                     case "super":
                         //increase xp by 20k
@@ -303,7 +304,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "You got 20k XP! Very Lucky.", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.grind.very, components: [], embeds: []});
                         break;
                 }
                 return
@@ -358,7 +359,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "You got scammed, loser! (-50k XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.scammed, components: [], embeds: []});
                         break;
                     case "huge":
                         await client_db.user.update({
@@ -369,7 +370,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Huge fucking trap~ (-200k XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.huge, components: [], embeds: []});
                         break;
                     case "win":
                         await client_db.user.update({
@@ -380,7 +381,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "This is totally a win, right? (50,000 XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.win, components: [], embeds: []});
                         break;
                     case "edged":
                         await client_db.user.update({
@@ -391,7 +392,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Edged closer to victory~ (100,000 XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.edge, components: [], embeds: []});
                         break;
                     case "dom":
                         await client_db.user.update({
@@ -402,7 +403,7 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Domination (180,000 XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.dom, components: [], embeds: []});
                         break;
                     case "total":
                         await client_db.user.update({
@@ -413,10 +414,10 @@ export default {
                                 }
                             }
                         });
-                        await option.editReply({content: "Total Domination (500,000 XP)", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.total, components: [], embeds: []});
                         break;
                     case "rainbow":
-                        await option.editReply({content: "You've won a custom role! Ping Coco.", components: [], embeds: []});
+                        await option.editReply({content: localizations.wheels.peach.custom, components: [], embeds: []});
                         break;
                 }
                 return;

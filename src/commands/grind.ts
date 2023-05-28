@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from "discord.js";
 import { client_db } from "../database.js";
+import localizations from "../localizations.js";
 
 export default {
     data: new SlashCommandBuilder()
@@ -33,17 +34,7 @@ export default {
                 lastDaily: new Date()
             }
         })
-        let messages = [
-            "You slayed a slime! Now you're all sticky...",
-            "Barely defeated that bone witch. Your boner almost got in your way...",
-            "Those imps were such a tease, but you managed to stay focused.",
-            "Those spirits licked and rubbed you through your armour, you almost came!",
-            "You almost willingly accepted a scam, but your companion saved you.",
-            "Moans filled the room as the wall trap teased you... you barely made it away.",
-            "You slayed a goblin. That's it. That's all. You'd never consider fucking one.",
-            "A giantess stepped on you and you nearly caved.",
-            "You were able to slay every cherub before their poison arrows got your dick throbbing."
-        ]
+        let messages = localizations.grinds;
         let message = messages[Math.floor(Math.random() * messages.length)]
         await interaction.reply(message + `\n+${xp}XP`);
     }
