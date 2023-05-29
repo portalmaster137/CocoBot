@@ -54,7 +54,14 @@ export default {
             "peach_farmer": "Peach Farmer!",
             "trap": "A Succubus",
             "good": "Pretty Ok...",
-            "super": "Damn, pretty nice."
+            "super": "Damn, pretty nice.",
+            "scammed": "A Shady figure...",
+            "huge": "Such a big loss.",
+            "win": "It's a Win!",
+            "edged": "So close~",
+            "dom": "Oh my~",
+            "total": "Ding ding ding!",
+            "rainbow": "Jackpot!"
         }
     }
 

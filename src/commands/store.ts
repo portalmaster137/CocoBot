@@ -110,7 +110,8 @@ export default {
             .setLabel("Loser Wheel~")
             .setStyle(ButtonStyle.Primary)
             .setEmoji("🎡")
-            .setDisabled(user_data.peaches < 3);
+            .setDisabled(user_data.peaches < 3 || true);
+            //TODO: remove true statement when the wheel is done
 
         const row_1 = new ActionRowBuilder()
             .addComponents(peach_box_button, big_mystery_box_button, pretty_in_pink_button);
@@ -353,6 +354,7 @@ export default {
                 //    await option.editReply({content: get_random_emotes(), components: [], embeds: []});
                 //    await new Promise(r => setTimeout(r, 500));
                 //}
+                await animation(option, pweights, presult);
                 switch (presult) {
                     case "scammed":
                         //lose 50k

@@ -3,22 +3,36 @@ import { MessageComponentInteraction } from "discord.js";
 let wait = (ms: number) => new Promise((resolve, reject) => setTimeout(resolve, ms));
 
 import localizations from "./localizations.js";
-let store_itmes = localizations.store.items;
+let store_items = localizations.store.items;
 
 function get_human_text_from_id(id: string) {
     switch (id) {
         case "peach":
-            return store_itmes.peach;
+            return store_items.peach;
         case "peach_pals":
-            return store_itmes.peach_pals;
+            return store_items.peach_pals;
         case "peach_farmer":
-            return store_itmes.peach_farmer;
+            return store_items.peach_farmer;
         case "trap":
-            return store_itmes.trap;
+            return store_items.trap;
         case "good":
-            return store_itmes.good;
+            return store_items.good;
         case "super":
-            return store_itmes.super;
+            return store_items.super;
+        case "scammed":
+            return store_items.scammed;
+        case "huge":
+            return store_items.huge;
+        case "win":
+            return store_items.win;
+        case "edged":
+            return store_items.edged;
+        case "dom":
+            return store_items.dom;
+        case "total":
+            return store_items.total;
+        case "rainbow":
+            return store_items.rainbow;
     }
 }
 
