@@ -159,6 +159,10 @@ export default {
                         }
                     }
                 });
+                await client_db.server.update({
+                    where: {id: "SERVER"},
+                    data: {community_pool: {increment: 50000}}
+                })
                 await option.editReply({content: "Hehehe, fucking idiot~", components: [], embeds: []});
                 break;
             case "pretty_in_pink":
@@ -184,6 +188,10 @@ export default {
                         }
                     }
                 });
+                await client_db.server.update({
+                    where: {id: "SERVER"},
+                    data: {community_pool: {increment: 250000}}
+                })
                 await option.editReply({content: "Wow, you're fucking braindead~", components: [], embeds: []});
                 break;
             case "horny_hole":
@@ -197,6 +205,10 @@ export default {
                         }
                     }
                 });
+                await client_db.server.update({
+                    where: {id: "SERVER"},
+                    data: {community_pool: {increment: 100000}}
+                })
                 await option.editReply({content: "Dumbass horny gooner~", components: [], embeds: []});
                 break;
 
