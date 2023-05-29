@@ -71,7 +71,7 @@ export default {
             .setDisabled(user_data.peaches < 1);
         let big_mystery_box_button = new ButtonBuilder()
             .setCustomId("big_mystery_box")
-            .setLabel("Biiig Mystery Box")
+            .setLabel("Big Mystery Box")
             .setStyle(ButtonStyle.Primary)
             .setEmoji("🎁")
             .setDisabled(user_data.xp < 50000);
