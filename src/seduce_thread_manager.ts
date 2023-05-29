@@ -176,9 +176,11 @@ async function handle_message(message: Message<boolean>) {
 }
 
 function thread_tick() {
-    thread_lists.forEach((t)=>{
+    thread_lists.forEach(async (t)=>{
         if ((Date.now() - t.last_msg.getTime()) > 600000) {
             console.log("Deleting thread " + t.id)
+            await t.user.send("Your thread with " + t.target.username + " has been deleted due to inactivity!");
+            await t.target.send("Your thread with " + t.user.username + " has been deleted due to inactivity!");
             t.thread_obj.delete();
             thread_lists.splice(thread_lists.indexOf(t), 1);
         }

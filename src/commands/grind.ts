@@ -16,7 +16,7 @@ export default {
         //if lastDaily was less than an hour ago, return
         if(user.lastDaily && (Date.now() - user.lastDaily.getTime()) < 1800000) {
             let time_to_next = Math.floor((1800000 - (Date.now() - user.lastDaily.getTime())) / 60000);
-            await interaction.reply(`Sorry, but you can grind again in ${time_to_next} minutes!`);
+            await interaction.reply({content: `Sorry, but you can grind again in ${time_to_next} minutes!`, ephemeral: true});
             return;
         }
         //if lastDaily was more than an hour ago, add 1000 to 1500 xp randomly

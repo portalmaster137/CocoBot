@@ -29,6 +29,11 @@ export default {
 
         const row = new ActionRowBuilder()
             .addComponents(seduce_btn, private_btn);
+        
+        if (target === interaction.client.user) {
+            await interaction.reply({content: "Why the fuck are you trying to seduce me? I'm too good for you, loser~", components: []});
+            return;
+        }
         const resp = await interaction.reply({content: `${user} is attempting to seduce ${target}!`, components: [row]});
         const filt = (i: { user: { id: any; }; }) => i.user.id === target.id;
         let opt;

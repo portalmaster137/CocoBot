@@ -18,6 +18,7 @@ import payback_loan from './payback_loan.js';
 import given_loans from './given_loans.js';
 import update_roles from './update_roles.js';
 import help from './help.js';
+import suggest from './suggest.js';
 
 //make an iterable array of all the commands
 let commands = [ping, motd, info, give_xp, take_xp, give_peaches, take_peaches, set_motd, grind, seduce, nuke_threads];
@@ -30,4 +31,5 @@ commands.push(payback_loan)
 commands.push(given_loans)
 commands.push(update_roles)
 commands.push(help);
+commands.push(suggest)
 export default commands;

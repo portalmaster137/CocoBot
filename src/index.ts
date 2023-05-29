@@ -1,4 +1,4 @@
-import { ActivityType, Client, Events, GatewayIntentBits } from 'discord.js';
+import { ActivityType, Client, Events, GatewayIntentBits, PresenceUpdateStatus } from 'discord.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -91,12 +91,16 @@ client.on('interactionCreate', async (interaction)=>{
         await command.execute(interaction);
     } catch (error) {
         console.error(error);
-        await interaction.reply({content: localizations.execution_error, ephemeral: true});
+        await interaction.channel?.send({content: localizations.execution_error});
     }
 })
 
 process.on('SIGINT', async ()=>{
     await prisma.$disconnect();
+    await client.user?.setPresence({
+        activities: [{name: "BOT OFFLINE.", type: ActivityType.Playing}],
+        status: "idle"
+    })
     process.exit();
 })
 

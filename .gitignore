@@ -4,3 +4,5 @@ node_modules
 build
 prisma
 src/users.ts
+copy_to_private.py
+yes

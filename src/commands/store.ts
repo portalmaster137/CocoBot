@@ -120,7 +120,7 @@ export default {
         const row_3 = new ActionRowBuilder()
             .addComponents(peach_wheel_button, loser_wheel_button);
 
-        const resp = await interaction.reply({embeds: [shopEmbed], components: [row_1, row_2, row_3]});
+        const resp = await interaction.reply({embeds: [shopEmbed], components: [row_1, row_2, row_3], ephemeral: false});
         const collectorFilter = (i: { user: { id: any; }; }) => i.user.id === interaction.user.id;
         let option;
         try {
@@ -324,7 +324,7 @@ export default {
                         break;
                 }
                 //ping the user
-                await option.channel?.send({content: `<@${interaction.user.id}>`})
+                
                 return
                 
             case "peach_wheel":
