@@ -18,7 +18,7 @@ export default {
                 }
             })
             if(!loans) {await interaction.reply("You don't have any loans!"); return;}
-            let loan_list = `🤍 ${user.username} Loans 🤍\n\n`;
+            let loan_list = `🤍 ${user.username}'s Loans 🤍\n\n`;
             for(let i = 0; i < loans.length; i++) {
                 loan_list += `${loans[i].loaner_nick} loaned you ${loans[i].amount} xp, expecting ${loans[i].payback} xp back! (Loan ID: ${loans[i].id})\n`
             }

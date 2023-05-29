@@ -31,8 +31,6 @@ function get_human_text_from_id(id: string) {
             return store_items.dom;
         case "total":
             return store_items.total;
-        case "rainbow":
-            return store_items.rainbow;
     }
 }
 

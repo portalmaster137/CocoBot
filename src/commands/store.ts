@@ -355,9 +355,6 @@ export default {
                 }, {
                     item: "total",
                     weight: 1
-                }, {
-                    item: "rainbow",
-                    weight: 1
                 }]
                 let presult = weighted_random(pweights);
                 await option.editReply({content: "Rolling the wheel~", components: [], embeds: []});
@@ -434,9 +431,6 @@ export default {
                             }
                         });
                         await option.editReply({content: localizations.wheels.peach.total, components: [], embeds: []});
-                        break;
-                    case "rainbow":
-                        await option.editReply({content: localizations.wheels.peach.custom, components: [], embeds: []});
                         break;
                 }
                 return;
