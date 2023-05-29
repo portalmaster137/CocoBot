@@ -51,7 +51,7 @@ async function handle_message(message: Message<boolean>) {
     //console.log(thread)
     if (!thread) return;
     thread.last_msg = new Date();
-    console.log(message.content)
+    console.log(chalk.green(`${message.author.username} in thread ${thread.id} - ${message.content}`))
     if (message.author.id === thread.user.id || message.author.id === thread.target.id) {
     } else {
         await message.delete();

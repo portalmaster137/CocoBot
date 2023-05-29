@@ -9,6 +9,7 @@ import { handle_message, thread_tick } from './seduce_thread_manager.js';
 import chalk from "chalk";
 import { set_client } from './client_handle.js';
 import localizations from './localizations.js';
+import { init, update_user_roles } from './role_handler.js';
 
 const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers]});
 
@@ -33,11 +34,11 @@ function st_status() {
     }
 }
 
-client.once('ready', ()=>{
+client.once('ready', async ()=>{
     set_client(client);
     st_status();
     setInterval(st_status, 180000);
-
+    await init();
     client.guilds.cache.forEach(async (guild)=>{
         guild.roles.cache.forEach(async (role)=>{
             //console.log(chalk.greenBright(`Found role: ${role.name}, with id: ${role.id} in guild: ${guild.name}`))
@@ -54,6 +55,8 @@ setInterval(()=>{
 
 client.on(Events.MessageCreate, async (message)=>{
     handle_message(message);
+    if (!message.member) return;
+    await update_user_roles(message.member);
 })
 
 client.on('interactionCreate', async (interaction)=>{

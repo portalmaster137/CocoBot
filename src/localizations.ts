@@ -46,6 +46,16 @@ export default {
             total: "Total Domination (500,000 XP)",
             custom: "You've won a custom role! Ping Coco."
         }
+    },
+    store: {
+        items: {
+            "peach": "A Peach",
+            "peach_pals": "Peach Pals!",
+            "peach_farmer": "Peach Farmer!",
+            "trap": "A Succubus",
+            "good": "Pretty Ok...",
+            "super": "Damn, pretty nice."
+        }
     }
 
 }

@@ -15,6 +15,8 @@ import store from './store.js';
 import offer_loan from './offer_loan.js';
 import loans from './loans.js';
 import payback_loan from './payback_loan.js';
+import given_loans from './given_loans.js';
+import update_roles from './update_roles.js';
 
 //make an iterable array of all the commands
 let commands = [ping, motd, info, give_xp, take_xp, give_peaches, take_peaches, set_motd, grind, seduce, nuke_threads];
@@ -24,4 +26,6 @@ commands.push(store)
 commands.push(offer_loan)
 commands.push(loans)
 commands.push(payback_loan)
+commands.push(given_loans)
+commands.push(update_roles)
 export default commands;

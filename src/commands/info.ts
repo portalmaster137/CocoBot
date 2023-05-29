@@ -23,7 +23,7 @@ export default {
                 let level = (Math.floor(user.xp / 10000))+1;
                 let rank = (Math.floor(level / 10))+1;
                 let rank_name = ranks.data.get(rank) as string;
-                await interaction.reply("Your current XP is: " + user.xp + ", And you have : " + user.peaches + " peaches.\n\nYou are currently level " + level + ", and your rank is: " + rank_name + ".");
+                await interaction.reply(`${user.username} current XP is: ${user.xp}, And they have ${user.peaches} peaches.\n\nThey are currently level ${level}, and their rank is: ${rank_name}`);
             }
         } else {
             const user = await client_db.user.findUnique({

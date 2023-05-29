@@ -1,6 +1,7 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, MessageComponentInteraction, SlashCommandBuilder } from "discord.js";
 import { client_db } from "../database.js";
 import localizations from "../localizations.js";
+import { animation } from "../wheel_anim.js";
 
 function weighted_random(options: string | any[]) {
     var i;
@@ -122,7 +123,7 @@ export default {
         const collectorFilter = (i: { user: { id: any; }; }) => i.user.id === interaction.user.id;
         let option;
         try {
-            option = await resp.awaitMessageComponent({filter: collectorFilter, time: 60000});
+            option = await resp.awaitMessageComponent({filter: collectorFilter, time: 60000}) as MessageComponentInteraction;
         } catch (e) {
             await interaction.editReply({content: "Shop window expired.", components: [], embeds: []});
             return;
@@ -236,6 +237,8 @@ export default {
                 //    await option.editReply({content: get_random_emotes(), components: [], embeds: []});
                 //    await new Promise(r => setTimeout(r, 500));
                 //}
+                //TODO: Cool animation for the wheela
+                await animation(option, weights, result);
                 switch (result) {
                     case "peach":
                         await client_db.user.update({
@@ -307,6 +310,8 @@ export default {
                         await option.editReply({content: localizations.wheels.grind.very, components: [], embeds: []});
                         break;
                 }
+                //ping the user
+                await option.channel?.send({content: `<@${interaction.user.id}>`})
                 return
                 
             case "peach_wheel":

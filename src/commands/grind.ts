@@ -14,8 +14,8 @@ export default {
         })
         if(!user) {await interaction.reply("there was an error getting your user data!"); return;}
         //if lastDaily was less than an hour ago, return
-        if(user.lastDaily && (Date.now() - user.lastDaily.getTime()) < 3600000) {
-            let time_to_next = Math.floor((3600000 - (Date.now() - user.lastDaily.getTime())) / 60000);
+        if(user.lastDaily && (Date.now() - user.lastDaily.getTime()) < 1800000) {
+            let time_to_next = Math.floor((1800000 - (Date.now() - user.lastDaily.getTime())) / 60000);
             await interaction.reply(`Sorry, but you can grind again in ${time_to_next} minutes!`);
             return;
         }
