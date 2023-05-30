@@ -426,7 +426,7 @@ export default {
                             where: {id: parseInt(interaction.user.id)},
                             data: {
                                 xp: {
-                                    increment: 180000
+                                    increment: 500000
                                 }
                             }
                         });
